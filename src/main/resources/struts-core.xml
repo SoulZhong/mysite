@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+  
+	 <package name="soullleo-default" extends="struts-default">  
+   		<interceptors>  
+       		<interceptor name="cklogin" class="com.soullleo.struts.interceptor.CheckLoginInterceptor">
+       		 </interceptor>  
+       		<interceptor-stack name="checkSecurity">  
+            	<!-- struts 2 的拦截器机制是有先后顺序的 -->  
+           		<interceptor-ref name="cklogin" />  
+            	<interceptor-ref name="defaultStack" />  
+        	</interceptor-stack>  
+  
+ 	    </interceptors>  
+  
+	    <default-interceptor-ref name="defaultStack" />  
+  
+	    <global-results>  
+	        <result name="login" type="redirect">/user/Login_index.action</result>
+	        <result name="noPermission" type="freemarker">/noPermission.ftl</result>  
+	    </global-results>  
+ 
+     </package>
+  
+	 <package name="soullleo-security" extends="soullleo-default">  
+ 
+	    <default-interceptor-ref name="checkSecurity" />  
+ 
+     </package>
+  
+</struts>

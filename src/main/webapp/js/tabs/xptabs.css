@@ -1,0 +1,30 @@
+.tabpage .square LI {
+	DISPLAY: block; LIST-STYLE: square outside
+}
+.scrollit {
+	OVERFLOW: auto; PADDING-BOTTOM: 1em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; PADDING-TOP: 1em; POSITION: relative
+}
+.tabsystem {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-RIGHT: medium none; BORDER-TOP: medium none; WIDTH: 100%
+}
+.tabsystem .tabcontainer UL {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-RIGHT: medium none; BORDER-TOP: medium none; DISPLAY: inline; LIST-STYLE: none; MARGIN: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-RIGHT: medium none; BORDER-TOP: medium none; DISPLAY: inline; LIST-STYLE: none; MARGIN: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.tabsystem .tabcontainer {
+	BACKGROUND-COLOR: #fff; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-RIGHT: medium none; BORDER-TOP: medium none; FILTER: none; FLOAT: left; MARGIN: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.tabsystem .tabpage {
+	BACKGROUND: #fff; BORDER-BOTTOM: rgb(145,155,156) 1px solid; BORDER-LEFT: rgb(145,155,156) 1px solid; BORDER-RIGHT: rgb(145,155,156) 1px solid; BORDER-TOP: rgb(145,155,156) 1px solid; CLEAR: both; COLOR: black; FONT: 14px Verdana; PADDING-BOTTOM: 0em; PADDING-LEFT: 0em; PADDING-RIGHT: 0em; PADDING-TOP: 0em
+}
+.tabsystem .tabcontainer .tab {
+	BACKGROUND-IMAGE: url(./tab.png); BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; FLOAT: left; FONT: 11px Tahoma; HEIGHT: 18px; MARGIN: 1px 1px 1px 0px; OVERFLOW: hidden; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 2px; POSITION: relative; TEXT-ALIGN: center; TOP: 0px; WHITE-SPACE: nowrap; WIDTH: 70px; Z-INDEX: 1
+}
+.tabsystem .tabcontainer .tab-hover {
+	BACKGROUND-IMAGE: url(./tab.hover.gif); HEIGHT: 18px; MARGIN: 1px 1px 1px 0px; WIDTH: 70px
+}
+.tabsystem .tabcontainer .tab-active {
+	BACKGROUND-IMAGE: url(./tab.active.gif); BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; FLOAT: left; FONT: 11px Tahoma; HEIGHT: 18px; LETTER-SPACING: 0px; MARGIN: 1px 1px 1px 0px; OVERFLOW: hidden; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 2px; POSITION: relative; TEXT-ALIGN: center; TEXT-DECORATION: none; TOP: 1px; WHITE-SPACE: nowrap; WIDTH: 74px; Z-INDEX: 1
+}

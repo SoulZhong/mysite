@@ -1,0 +1,56 @@
+.sort-table {
+	font: Icon;
+	color: #fff;
+}
+
+.sort-table thead {
+}
+
+.sort-table th {
+	padding:	2px 5px;
+}
+
+.sort-table thead th {
+	color: #000;
+	cursor:			hand;
+	background-color: #d4e7f6;
+}
+.sort-table thead .static {
+	cursor: default;
+}
+
+.sort-table thead .sort {
+	color:#770107
+}
+
+.sort-table thead th:active {
+	padding: 3px 4px 1px 6px;
+}
+
+.sort-table tbody td {	
+}
+
+.sort-table tbody .a td {	
+	background: #ddd;
+}
+
+.sort-table tbody .b td {	
+	background: #efefef;	
+}
+
+.sort-arrow {
+	width:					11px;
+	height:					11px;
+	background-position:	center center;
+	background-repeat:		no-repeat;
+	margin:					0 2px;
+}
+
+.sort-arrow.descending {
+	background-image:		url("../images/downsimple.png");
+	
+}
+
+.sort-arrow.ascending {
+	background-image:		url("../images/upsimple.png");
+}

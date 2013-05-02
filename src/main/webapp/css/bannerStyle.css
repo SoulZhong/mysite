@@ -1,0 +1,39 @@
+  
+.banner{ 
+  margin-top: 10px;        
+  color: red;
+  font-weight: bold;
+  font-size: 5em;
+}
+
+#languageSelector{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+#loginArea{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	
+	padding: 4px 0px 0px 10px;
+}
+
+#loginArea a{
+	color: black;
+}
+
+.logout{
+	border: solid 1px gray;
+}
+
+.logout:hover{
+	background-color: yellow;
+}
+
+
+
+	
+	
+	

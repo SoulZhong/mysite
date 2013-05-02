@@ -1,0 +1,57 @@
+
+   /*
+	* Design Soul
+	* Released for free under MIT License
+	* date: 2011-11-21
+	*/
+.bold{
+	font-weight: bold;
+}
+
+.blogMain{
+	margin: auto;
+}
+
+.blogSection{
+	margin: 2px auto;
+	padding: 5px 10px;
+	border-top: 2px solid #fff; 
+	border-bottom: 1px solid #fff; 
+	width: 85%;
+	text-align: left;
+}
+
+.blogSection a{
+	color: gray;	
+}
+
+.blogSection a:hover{
+	color: red;
+}
+
+.blogTitle a{
+	color: #fff;
+}
+
+.blogSubTitle{
+	color: gray;
+	padding-left: 2em;
+}
+	
+.blogCreator{
+	margin-left: 10px;
+	text-align: left;
+}
+
+.blogContent{
+	width: 100%;
+}
+
+.blogFooter{
+	width: 100%;
+}
+
+.date{
+	font-size:0.8em;	
+}
+

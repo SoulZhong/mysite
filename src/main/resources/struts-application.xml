@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  
+  <package name="user" namespace="/user" extends="soullleo-default">
+  
+  	<global-results>
+  		<result name="error" type="freemarker">/error.ftl</result>
+		<result name="nopermission" type="freemarker">/nopermission.ftl</result>
+        <result name="exception" type="freemarker">/exception.ftl</result>
+  	</global-results>
+  	
+	<action name="Login_index">
+		<result name="success" type="freemarker">/user/Account_index.ftl</result>
+	</action>
+  	<action name="Account_login" class="com.soullleo.website.action.user.AccountActions" method="doLoginAction">
+  		<result name="success" type="freemarker">/decorators/includes/Account_info.ftl</result>
+  		<result name="input" type="freemarker">/decorators/includes/Account_login.ftl</result>
+  	</action>
+  	<action name="Account_logout" class="com.soullleo.website.action.user.AccountActions" method="doLogoutAction">
+  		<result name="success" type="freemarker">/decorators/includes/Account_login.ftl</result>
+  	</action>
+  	
+	<action name="index" class="com.soullleo.website.action.user.BaseUserAction">
+	   <result name="success" type="freemarker">/user/index.ftl</result>
+    </action>
+    
+    <action name="*_index" class="com.soullleo.website.action.user.{1}Actions">
+    	<result name="success" type="freemarker">/user/{1}_index.ftl</result>
+    </action>
+    
+    <action name="*_*" class="com.soullleo.website.action.user.{1}Actions" method="{2}Action">
+    	<result name="success" type="redirect">{1}_index.action</result>
+    	<result name="done" type="freemarker">/user/{1}_{2}.ftl</result>
+    </action>
+		   
+	<action name="Blog_edit" class="com.soullleo.website.action.user.BlogActions" method="editAction">
+		<interceptor-ref name="checkSecurity"></interceptor-ref>
+		<result name="done" type="freemarker">/user/Blog_edit.ftl</result>
+		<result name="input" type="freemarker">/user/Blog_index.ftl</result>
+	</action>
+	
+	<action name="Blog_view" class="com.soullleo.website.action.user.BlogActions" method="viewAction">
+		<result name="success" type="freemarker">/user/Blog_view.ftl</result>
+	</action>
+	
+	<action name="Blog_load" class="com.soullleo.website.action.user.BlogActions" method="viewAction">
+		<result name="success" type="freemarker">/user/Blog_summary.ftl</result>
+	</action>
+	
+	<action name="Message_create" class="com.soullleo.website.action.user.MessageActions" method="createAction">
+		<result name="success" type="freemarker">/user/includes/messageList.ftl</result>
+	</action>
+	
+	<action name="Comment_create" class="com.soullleo.website.action.user.CommentActions" method="createAction">
+		<result name="success" type="freemarker">/user/includes/commentList.ftl</result>
+	</action>
+	
+  </package>
+  
+  <package name="admin" namespace="/admin" extends="struts-default">
+  
+  	<global-results>
+  		<result name="error" type="freemarker">/error.ftl</result>
+		<result name="nopermission" type="freemarker">/nopermission.ftl</result>
+        <result name="exception" type="freemarker">/exception.ftl</result>
+  	</global-results>
+  	<action name="index" class="com.soullleo.website.action.admin.BaseAdminAction">
+  		<result name="success" type="freemarker">/admin/index.ftl</result>
+  	</action>
+  	
+    <action name="*_index" class="com.soullleo.website.action.admin.{1}Actions">
+    	<result name="success" type="freemarker">/admin/{1}_index.ftl</result>
+    </action>
+    
+    <action name="*_*" class="com.soullleo.website.action.admin.{1}Actions" method="{2}Action">
+    	<result name="success" type="redirect">{1}_index.action</result>
+    	<result name="done" type="freemarker">/admin/{1}_{2}.ftl</result>
+    </action>
+    
+    <action name="Blog_updateSummary" class="com.soullleo.website.action.admin.BlogActions" method="UpdateSummaryAction">
+    	<result name="success" type="freemarker">/success.ftl</result>
+    </action>
+  	  
+  </package>
+  
+</struts>

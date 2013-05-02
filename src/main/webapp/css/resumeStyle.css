@@ -1,0 +1,83 @@
+
+   /*
+	* Design Soul
+	* Released for free under MIT License
+	* date: 2011-12-24
+	*/
+
+#resumeContent{
+	padding: 10px 20px;
+	text-align: left;
+}
+
+#resumeContent a{
+	color: yellow;
+	text-decoration: underline;
+}
+
+#resumeContent a:hover{
+	color: red;
+}
+
+#resumeContent hr{
+	color: #fff; 
+	border-style: dashed;
+	margin: 3px;
+	/*border: 3px double gray;*/
+}
+	
+	
+#resumeContent fieldset{	
+	padding: 10px; 
+	margin: 5px, 5px; 
+	border-top: 3px double #fff; 
+	
+	/*
+  text-align: center;  
+  margin: 0px auto;
+  padding: 1px;
+  border-top: #fff double 3px;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+  */
+}
+
+#resumeContent legend{
+	color: #fff; 
+	font-weight:bold; 
+	font-size: 16px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border:3px double #fff; 
+	background: #042;
+
+  /*
+  font-weight: bold;
+  font-size: 20px;
+  color: #004221;
+  text-align: center;   
+  margin: 3px auto;
+  padding: 1px;
+  background: url(../images/chalkBg.gif);
+  border: #fff double 3px;
+  */
+}
+
+#resumeContent #name{
+	float: left;
+	padding: 0px 30px;
+}
+
+.resumeSection{
+	text-align: left;
+	padding: 0px 30px;
+}
+
+#resumeContent dl{
+	margin-top: 10px;
+}
+
+#resumeContent dd{
+	margin-left: 2em;
+}

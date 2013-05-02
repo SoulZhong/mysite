@@ -1,0 +1,67 @@
+
+   /*
+	* Design Soul
+	* Released for free under MIT License
+	* date: 2011-11-21
+	*/
+textarea{
+	width: 85%;
+	height: 3em;
+}
+
+.msgContent{
+	margin: auto;
+	text-align: center;
+	width: 85%;
+}
+
+.msgSection{
+	
+	margin: auto;
+	padding: 5px 10px;
+	border-bottom: 1px solid #fff; 
+	width: 85%;
+	text-align: left;
+}
+
+.msgSection a{
+	color: blue;	
+	
+}
+
+.msgCreator{
+	margin-left: 10px;
+	text-align: left;
+}
+	
+.date{
+	font-size:0.8em;	
+}
+.message{
+	padding-left: 2em;		
+}
+
+
+
+.msgContent fieldset{    
+  text-align: center;  
+  margin: 0px auto;
+  padding: 5px;
+  border-top-width: 2px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.msgContent fieldset legend{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: ºÚÌå;
+  color: #004221;
+  text-align: center;   
+  margin: 3px auto;
+  padding: 1px;
+  background: url(../images/chalkBg.gif); 
+}
+
+

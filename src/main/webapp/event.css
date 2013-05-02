@@ -1,0 +1,110 @@
+                                        
+/*---------------Event-----------------*/
+.spacer{
+	clear:both; 
+	font-size:0; 
+	line-height:0;
+}
+
+#event{
+	width:282px;
+	float:left;
+	margin:0 26px 0 0;  
+}
+#event h2{
+	display:block;
+	background:url(../images/event_bg.gif) 0 0 no-repeat;
+	width:210px;
+	height:31px;
+	padding:23px 0 0 72px;
+	font:bold 22px/30px Arial, Helvetica, sans-serif;
+	color:#2D2D2D;
+	background-color:inherit;
+	margin:0;
+}
+#event2{
+	width:282px;
+	float:left;
+	margin:0;
+	background:url(../images/event_1px.gif) 0 0 repeat-x #F6F6E2;
+	color:#C06C06;  
+}
+#event2 ul.first2{
+	padding:14px 0 0 20px;    
+	width:260px;
+	border-left:#CECEAE solid 1px;
+	border-right:#CECEAE solid 1px;
+}
+#event2 ul{
+	padding:0 0 0 20px;
+	width:260px;
+	border-left:#CECEAE solid 1px;
+	border-right:#CECEAE solid 1px;
+}
+#event2 ul li{
+	width:260px;
+}
+#event2 ul li.nor{
+	display:block;
+	background:url(../images/arrow.gif) 0 3px no-repeat;
+	padding:0 0 0 9px;
+	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width:241px;
+	color:#237874;
+	background-color:inherit;
+}
+#event2 ul li.nor span{
+	color:#837A08;
+	background-color:inherit;
+	font-weight:bold;
+}
+#event2 ul li.orange{
+	display:block;
+	font:bold 11px/14px Arial, Helvetica, sans-serif;
+	/*color:#C06C06;
+	background-color:inherit;
+	margin:0 0 12px 0;*/
+	padding:0 0 9px 0;
+	width:241px;
+}
+#event2 ul li.orange2{
+	display:block;
+	font:bold 11px/16px Arial, Helvetica, sans-serif;
+	/*color:#C06C06;
+	background-color:inherit;
+	margin:22px 0 12px 0;*/
+	padding:9px 0 8px 0;
+	width:241px;
+}
+#event2 ul.last2{
+	padding:0 0 14px 20px;
+	width:260px;
+	border-left:#CECEAE solid 1px;
+	border-right:#CECEAE solid 1px;
+}
+#event2 ul li a.readMore2{
+	display:block;
+	background:url(../images/read_more_bg2.gif) 0 0 no-repeat;
+	width:76px;
+	height:20px;
+	font:bold 10px/20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	background-color:inherit;
+	text-decoration:none;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 0 0 170px;
+}
+#event2 ul li a.readMore2:hover{
+	color:#FFC423;
+	background-color:inherit;
+}
+#event2 p.eventBot{
+	display:block;
+	width:282px;
+	height:22px;
+	font-size:0;
+	line-height:0;
+	background:url(../images/event_bottom.gif) 0 0 no-repeat;
+}
+/* Event end */   

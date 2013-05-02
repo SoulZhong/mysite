@@ -1,0 +1,103 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5 Geolocation Distance Tracker</title>
+    <script type="text/javascript">
+      var totalDistance = 0.0;
+      var lastLat;
+      var lastLong;
+      
+      function updateLocation(position){
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var accuracy = position.coords.accuracy;
+        var timestamp = position.timestamp;
+        
+        
+        document.getElementById("latitude").innerHTML = latitude;
+        document.getElementById("longitude").innerHTML = longitude;
+        document.getElementById("accuracy").innerHTML = accuracy;
+        document.getElementById("timestamp").innerHTML = timestamp;
+         
+        if(accuracy >= 500){
+          updateStatus("Need more accurate values to calculate distance.");
+          return;
+        }
+        
+        //calculate distance
+        if((lastLat != null) && (lastLong != null)){
+          var currentDistance = distance(latitude, longitude, lastLat, lastLong);
+          document.getElementById("currDist").innerHTML = "Current distance traveled: " + currentDistance.toFixed(4) + " km";
+          
+          totalDistance += currentDistance;
+          document.getElementById("totalDist").innerHTML = "Total distance traveled: " + totalDistance.toFixed(4) + " km";
+        }
+        
+        lastLat = latitude;
+        lastLong = longitude;
+        
+        updateStatus("Location successfully updated.");
+      }
+      
+      function handleLocationError(error){
+        switch(error.code){
+          case 0:
+            updateStatus("There was an error while retrieving your location: " + error.message);
+            break;
+          case 1:
+            updateStatus("The user prevented this page from retrieving a location.");
+            break;
+          case 2:
+            updateStatus("The browser was unable to determine your location: " + error.message);
+            break;
+          case 3:
+            updateStatus("The browser timed out before retrieving the location.");
+            break;
+        
+        }
+      }     
+      
+      function updateStatus(message){
+        document.getElementById("status").innerHTML = message;
+        
+      }
+      
+      function loadDemo(){
+        if(navigator.geolocation){
+          updateStatus("HMTL5 Geolocation is supported in your browser.");
+          navigation.geolocation.watchPosition(updateLocation, handleLocationError, {maximumAge: 20000});
+        }
+      }
+      
+      window.addEventListener("load", loadDemo, true);
+      
+    </script>
+  </head>
+  <body>
+    <h1>HTML5 Geolocation Distance Tracker</h1>
+    <p id="status">HTML5 Geolocation is <strong>not</strong> support in your browser.</p>
+    <h2>Current Position</h2>
+    <table border="1">
+      <tr>
+        <th width="40" scope="col">Latitude</th>
+        <td width="114" id="latitude">?</td>
+      </tr>
+      <tr>
+        <td>Longitude</td>
+        <td id="logitude"></td>
+      </tr>
+      <tr>
+        <td>Accuracy</td>
+        <td id="accuracy"></td>
+      </tr>
+      <tr>
+        <td>Last Timestamp</td>
+        <td id="timestamp"></td>
+      </tr>
+    </table>
+    <h4 id="currDist">Current distance traveled: 0.0km</h4>
+    <h4 id="totalDist">Total distance traveled: 0.0km</h4>
+  </body>
+</html>

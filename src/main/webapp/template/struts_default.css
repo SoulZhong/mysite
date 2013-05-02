@@ -1,0 +1,19 @@
+
+.wwFormTable {}
+.label {
+    font-style:italic;
+    float:left;
+}
+.errorLabel {font-style:italic; color:red; }
+.errorMessage {font-weight:bold; color:red; }
+.checkboxLabel {}
+.checkboxErrorLabel {color:red; }
+.required {color:red;}
+
+.wwctrl{
+	
+	}
+	
+.wwgrp{
+	float: left;
+}

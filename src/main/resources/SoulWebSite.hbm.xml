@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.soullleo.website.domain">
+	<class name="Notice" table="website_notice">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="value"></property>
+		<property name="updatePerson"></property>
+		<property name="updateTime"></property>
+		<property name="effective"></property>	
+	</class>
+
+	<class name="Account" table="website_account">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="role"></property>
+		<property name="username"></property>
+		<property name="password"></property>
+		<property name="email"></property>
+		<property name="lastLoginIp"></property>
+		<property name="sessionId"></property>
+		<property name="effective"></property>	
+		<bag name="messages" lazy="true" inverse="true" >
+			<key column="account_id"></key>
+			<one-to-many class="Message"/>
+		</bag>
+		<bag name="comments" lazy="true" inverse="true">
+			<key column="account_id"></key>
+			<one-to-many class="Comment"/>
+		</bag>
+		<bag name="blogs" lazy="true" inverse="true">
+			<key column="account_id"></key>
+			<one-to-many class="Blog"/>
+		</bag>
+	</class>
+	
+	<class name="Blog" table="website_blog">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="title"></property>
+		<property name="keyWords"></property>
+		<property name="content"></property>
+		<property name="summary"></property>
+		<property name="tags"></property>	
+		<property name="createTime"></property>	
+		<property name="updateTime"></property>	
+		<property name="status"></property>
+		<bag name="comments">
+			<key column="blog_id"></key>
+			<one-to-many class="Comment"/>
+		</bag>	
+		<many-to-one name="author" class="Account" column="account_id" cascade="save-update" ></many-to-one>
+	</class>
+	
+	<class name="Message" table="website_message">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="value"></property>
+		<property name="updateTime"></property>
+		<property name="effective"></property>
+		<many-to-one name="account" class="Account" column="account_id" cascade="save-update"/>
+	</class>
+
+	
+	<class name="Comment" table="website_comment">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="value"></property>
+		<property name="updateTime"></property>
+		<property name="effective"></property>
+		<many-to-one name="account" class="Account" column="account_id" cascade="save-update"></many-to-one>
+		<many-to-one name="blog" class="Blog" column="blog_id"></many-to-one>
+	</class>
+	
+	<class name="Favorite" table="website_favorite">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="description"></property>
+		<property name="url"></property>
+		<property name="createTime"></property>
+		<property name="effective"></property>
+	</class>
+
+</hibernate-mapping>

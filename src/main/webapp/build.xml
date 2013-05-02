@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2013-2-24 下午9:54:42                                                        
+
+     project    
+     description
+                   
+     soul                                                                
+     ====================================================================== -->
+<project name="project" basedir="." default="default">
+    <description>
+            description
+    </description>
+	
+	<property name="src-java.dir" value="WEB-INF/src"></property>
+	<property name="class.dir" value="WEB-INF/classes"></property>
+	<property name="lib.dir" value="WEB-INF/lib"></property>
+	<property file="build.properties" />
+	
+	
+	<path id="build-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+			<include name="*.zip" />
+		</fileset>
+	</path>
+	
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="default" depends="depends" description="description">
+        
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="depends">
+    </target>
+
+	
+	<target name="build" description="Compile Java sources">
+		<mkdir dir="${class.dir}" />
+		<javac destdir="${class.dir}" source="1.6" target="1.6" debug="true" deprecation="true" optimize="true" failonerror="true" encoding="GBK" >
+			<src path="${src-java.dir}" />
+			<classpath refid="build-classpath" />
+		</javac>
+		<copy todir="${class.dir}">
+			<fileset dir="${src-java.dir}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+	</target>
+		
+</project>

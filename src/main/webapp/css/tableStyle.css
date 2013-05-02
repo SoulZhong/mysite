@@ -1,0 +1,37 @@
+.tableStyle {
+	font:		Icon;
+}
+
+.tableStyle thead {
+}
+
+.tableStyle th {
+	padding:	2px 5px;
+}
+
+.tableStyle thead th {
+	background-color: #d4e7f6;
+}
+.tableStyle thead .static {
+	cursor:			default;
+}
+
+.tableStyle thead .sort {
+	color:#770107
+}
+
+.tableStyle thead th:active {
+	padding:		3px 4px 1px 6px;
+}
+
+.tableStyle tbody td {	
+	background: #efefef;	
+}
+
+.tableStyle tbody .a td {	
+	background: #ddd;
+}
+
+.tableStyle tbody .b td {	
+	background: #efefef;	
+}

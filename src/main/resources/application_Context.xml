@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">	
+			<bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		   		<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
+		   		<property name="url"><value>jdbc:mysql://localhost:3306/soulwebsite</value></property>
+				<property name="username"><value>root</value></property>
+				<property name="password"><value>root</value></property>
+		    </bean>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>SoulWebSite.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.query.substitutions">true 1, false 0</prop>
+			</props>
+		</property>
+	</bean>
+
+
+    
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+	</bean>	
+	
+	<!-- Transactional proxy for the services -->
+    <bean id="baseTxProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" lazy-init="true">
+        <property name="transactionManager"><ref bean="transactionManager"/></property>
+        <property name="transactionAttributes">
+        <props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+        </props>
+        </property>
+    </bean>
+
+	<bean id="baseService" parent="baseTxProxy">
+        <property name="target">
+            <bean class="com.soullleo.website.service.impl.BaseServiceImpl" autowire="byName"/>
+        </property>
+    </bean>
+
+	<bean id="blogService" parent="baseTxProxy">
+        <property name="target">
+            <bean class="com.soullleo.website.service.impl.BlogServiceImpl" autowire="byName"/>
+        </property>
+    </bean>
+    
+</beans>
+
