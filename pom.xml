@@ -169,6 +169,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -179,6 +180,16 @@
 		</dependencies>
 	</dependencyManagement>
 	<url>http://www.soullleo.com</url>
+	
+	<repositories>  
+	    <repository>  
+	      <snapshots>  
+	        <enabled>false</enabled>  
+	      </snapshots>  
+	      <id>central</id>  
+	      <name>Maven Repository Switchboard</name>  
+	      <url>http://repo2.maven.org/maven2</url>  
+	    </repository>  
+	 </repositories>  
+
 </project>
-
-

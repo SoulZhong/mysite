@@ -15,4 +15,6 @@ public interface BlogService {
 
 	List<Blog> query(int first, int size);
 
+	long total();
+
 }

@@ -1,4 +1,5 @@
 
+<#include "page.ftl"/>
   <#list blogs?if_exists?sort_by('createTime')?reverse as blog>
 	  	<div id="blog_${blog.id}"></div>
 	  	<script type="text/javascript">
@@ -10,3 +11,4 @@
 	  		
 	  	</script>
   </#list>
+<#include "page.ftl"/>  

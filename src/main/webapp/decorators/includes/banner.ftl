@@ -4,18 +4,30 @@
 	<@s.text name="home.title2"/>
 </div> 
 
+
 <div id="loginArea">
-<#--
-	<#if Session['_LOGIN_ACCOUNT_']?exists>
-		<@s.text name="welcome"  theme="simple"/> 
-		<span class="accountInfo">
-			<#include "Account_info.ftl"/>
-		</span>
-	<#else>
-		<#include "Account_login.ftl" />
-	</#if>
- -->
+<div id="showarea"></div>
+
 </div>
+
+<script type='text/javascript'>
+WB2.anyWhere(function(W){
+    W.widget.connectButton({
+        id: "showarea",
+        type: '3,2',
+        callback : {
+            login:function(o){
+//                alert(o.screen_name)
+            },
+            logout:function(){
+//                alert('logout');
+            }
+        }
+    });
+});
+</script>
+
+
 <div id="languageSelector">
 	<#include "languageSelector.ftl"/>
 </div>

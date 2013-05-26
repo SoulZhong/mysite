@@ -32,6 +32,10 @@
     	<result name="success" type="freemarker">/user/{1}_index.ftl</result>
     </action>
     
+    <action name="Blog_index" class="com.soullleo.website.action.user.BlogActions">
+    	<result name="success" type="freemarker">/user/Blog_index.ftl</result>
+    </action>
+    
     <action name="*_*" class="com.soullleo.website.action.user.{1}Actions" method="{2}Action">
     	<result name="success" type="redirect">{1}_index.action</result>
     	<result name="done" type="freemarker">/user/{1}_{2}.ftl</result>

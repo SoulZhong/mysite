@@ -50,28 +50,16 @@
         </div>
         <!-- chalkboard -->
         
-			ÄúÊÇµÚ<!-- GoStats JavaScript Based Code -->
+			ï¿½ï¿½ï¿½Çµï¿½<!-- GoStats JavaScript Based Code -->
 <script type="text/javascript" src="http://gostats.cn/js/counter.js"></script>
 <script type="text/javascript">_gos='c3.gostats.cn';_goa=355230;
-_got=7;_goi=3;_goz=0;_god='visitors';_gol='Á÷Á¿Í³¼ÆÔ´Âë';_GoStatsRun();</script>
-<noscript><a target="_blank" title="Á÷Á¿Í³¼ÆÔ´Âë" 
-href="http://gostats.cn"><img alt="Á÷Á¿Í³¼ÆÔ´Âë" 
+_got=7;_goi=3;_goz=0;_god='visitors';_gol='ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ô´ï¿½ï¿½';_GoStatsRun();</script>
+<noscript><a target="_blank" title="ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ô´ï¿½ï¿½" 
+href="http://gostats.cn"><img alt="ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ô´ï¿½ï¿½" 
 src="http://c3.gostats.cn/bin/count/a_355230/t_7/i_3/z_0/show_visitors/counter.png" 
 style="border-width:0" /></a></noscript>
-<!-- End GoStats JavaScript Based Code -->Î»·ÃÎÊÕß
+<!-- End GoStats JavaScript Based Code -->Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			
-			<!-- ShareTo Button BEGIN -->
-<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_float.js#color=0&align=left&move=1" charset="utf-8"></script> 
-<!-- ShareTo Button END -->
-			
-        <!-- Baidu statistic -->
-        <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9517307949872e77022e1769467088eb' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
-<script src="http://s9.cnzz.com/stat.php?id=3819647&web_id=3819647&show=pic" language="JavaScript"></script>     
-        
 <script type="text/javascript" src="${base}/js/jquery-1.3.2.min.js"></script> 
 <script type="text/javascript" src="${base}/js/jquery-ui-1.7.3.custom.min.js"></script>  
 <script type="text/javascript" src="${base}/js/clock.js"></script> 

@@ -15,11 +15,16 @@
 	
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource">	
+		<!-- 
 			<bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		   		<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
-		   		<property name="url"><value>jdbc:mysql://localhost:3306/soulwebsite</value></property>
+		   		<property name="url"><value>jdbc:mysql://209.141.46.127:3306/soulwebsite</value></property>
 				<property name="username"><value>root</value></property>
-				<property name="password"><value>root</value></property>
+				<property name="password"><value>dianlang321</value></property>
+		    </bean>
+		     -->
+		    <bean class="com.soullleo.commons.DataSourceWrapper" destroy-method="close">
+		    	<property name="configFile"><value>/home/soul/datasource.properties</value></property>
 		    </bean>
 		</property>
 		<property name="mappingResources">
