@@ -50,16 +50,11 @@
         </div>
         <!-- chalkboard -->
         
-			ï¿½ï¿½ï¿½Çµï¿½<!-- GoStats JavaScript Based Code -->
+ÄúÊÇµÚ<!-- GoStats JavaScript Based Code -->
 <script type="text/javascript" src="http://gostats.cn/js/counter.js"></script>
-<script type="text/javascript">_gos='c3.gostats.cn';_goa=355230;
-_got=7;_goi=3;_goz=0;_god='visitors';_gol='ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ô´ï¿½ï¿½';_GoStatsRun();</script>
-<noscript><a target="_blank" title="ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ô´ï¿½ï¿½" 
-href="http://gostats.cn"><img alt="ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½Ô´ï¿½ï¿½" 
-src="http://c3.gostats.cn/bin/count/a_355230/t_7/i_3/z_0/show_visitors/counter.png" 
-style="border-width:0" /></a></noscript>
-<!-- End GoStats JavaScript Based Code -->Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-			
+<script type="text/javascript">_gos='c3.gostats.cn';_goa=355230; _got=7;_goi=3;_goz=0;_god='visitors';_gol='';_GoStatsRun();</script>
+<noscript><a target="_blank" title="" href="http://gostats.cn"><img alt="" src="http://c3.gostats.cn/bin/count/a_355230/t_7/i_3/z_0/show_visitors/counter.png" style="border-width:0" /></a></noscript>
+<!-- End GoStats JavaScript Based Code -->Î»·Ã¿Í
 <script type="text/javascript" src="${base}/js/jquery-1.3.2.min.js"></script> 
 <script type="text/javascript" src="${base}/js/jquery-ui-1.7.3.custom.min.js"></script>  
 <script type="text/javascript" src="${base}/js/clock.js"></script> 

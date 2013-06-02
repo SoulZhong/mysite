@@ -18,7 +18,7 @@
 		<fieldset>
 			<legend align="center"><@s.text name="friendsLink"/></legend>
 			<ul style="text-align:left;">
-				<li><a href="http://shop62182677.taobao.com" target="_blank">E.Zhongï¿½ï¿½ï¿½(ï¿½Ô±ï¿½ï¿½ï¿½)</a></li>	
+				<li><a href="http://shop62182677.taobao.com" target="_blank">E.ZhongÉè¼Æ(ÌÔ±¦µê)</a></li>	
                 <li><a href="http://blog.nxyouxi.com/" target="_blank">Mchen</a></li>
                 <li><a href="http://www.nealjin.com/" target="_blank">Neal</a></li>
 			</ul>
