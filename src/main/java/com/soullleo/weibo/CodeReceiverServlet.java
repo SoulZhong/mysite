@@ -3,6 +3,8 @@
  */
 package com.soullleo.weibo;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +25,12 @@ public class CodeReceiverServlet extends HttpServlet {
 		String code = request.getParameter("code");
 		if(code != null){
 			System.out.println("code>>>>>>>>>>>>>>>>>>>"+code);
+		}
+		try {
+			response.getOutputStream().write(("code is " + code).getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}
