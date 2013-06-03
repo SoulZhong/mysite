@@ -198,4 +198,5 @@
 	    </repository>  
 	 </repositories>  
 
+	<packaging>war</packaging>
 </project>
