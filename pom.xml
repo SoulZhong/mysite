@@ -125,6 +125,7 @@
 			<groupId>com.ckeditor</groupId>
 			<artifactId>ckeditor-java-core</artifactId>
 			<version>3.5.3</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<build>
