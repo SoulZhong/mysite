@@ -25,6 +25,7 @@ public class CodeReceiverServlet extends HttpServlet {
 		String code = request.getParameter("code");
 		if(code != null){
 			System.out.println("code>>>>>>>>>>>>>>>>>>>"+code);
+			OAuth.instance.setAccess_token(code);
 		}
 		try {
 			response.getOutputStream().write(("code is " + code).getBytes());

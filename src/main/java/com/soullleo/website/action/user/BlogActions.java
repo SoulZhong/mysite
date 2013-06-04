@@ -4,15 +4,17 @@
 package com.soullleo.website.action.user;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.soullleo.html.KeepStructureHTMLParser;
+import com.soullleo.html.NoHTMLParser;
 import com.soullleo.website.domain.Blog;
 import com.soullleo.website.util.DomainConstants;
+import com.soullleo.weibo.OAuth;
+import com.soullleo.weibo.TimelineOperator;
 
 /**
  * @author Soul
@@ -48,6 +50,8 @@ public class BlogActions extends BaseUserAction {
 			blog.setSummary(KeepStructureHTMLParser.parse(blog.getContent()));
 			blog.setUpdateTime(new Date());
 			getBaseService().saveOrUpdate(blog);
+			
+			new TimelineOperator().updateStatus(OAuth.instance.getAccess_token(), NoHTMLParser.splitAndFilterString(blog.getContent(), 130));
 		}
 		return SUCCESS;
 	}
