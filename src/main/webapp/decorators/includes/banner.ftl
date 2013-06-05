@@ -7,7 +7,7 @@
 
 <div id="loginArea">
 <div id="showarea"></div>
-
+<a href="/weibo?do=login">����΢����¼</a>
 </div>
 
 <script type='text/javascript'>
@@ -17,11 +17,9 @@ WB2.anyWhere(function(W){
         type: '3,2',
         callback : {
             login:function(o){
-//                alert(o.screen_name)
+				console.log(o);
             },
-            logout:function(){
-//                alert('logout');
-            }
+            logout:function(){}
         }
     });
 });

@@ -22,7 +22,7 @@
 		
 	
 	
-		<@sx.submit targets="commentList" value="${action.getText('sendMsg')}" theme="ajax" />
+		<input type='submit' value="${action.getText('sendMsg')}"/>
 	
 	</@s.form>
 	

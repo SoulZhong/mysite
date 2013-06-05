@@ -51,6 +51,8 @@ public class BlogActions extends BaseUserAction {
 			blog.setUpdateTime(new Date());
 			getBaseService().saveOrUpdate(blog);
 			
+			System.out.println(">>>>>>>>>>>>>>>>>" + OAuth.instance.getAccess_token());
+			
 			new TimelineOperator().updateStatus(OAuth.instance.getAccess_token(), NoHTMLParser.splitAndFilterString(blog.getContent(), 130));
 		}
 		return SUCCESS;

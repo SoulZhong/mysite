@@ -3,7 +3,6 @@
 		<link rel="stylesheet" type="text/css"  href="${base}/css/blogStyle.css"/>
 		<link rel="stylesheet" type="text/css"  href="${base}/js/jquery-1.7.1.js"/>	
  	   <link rel="stylesheet" type="text/css"  href="${base}/css/messageStyle.css"/>	
-	   <@sx.head theme="ajax" debug="true"/>
 	</head>
 	<body>
 	    <div class="blogMain">
