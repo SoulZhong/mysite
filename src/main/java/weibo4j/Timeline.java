@@ -710,8 +710,13 @@ public class Timeline extends Weibo{
 	 * @since JDK 1.5
 	 */
 	public Status UpdateStatus(String status) throws WeiboException {
-		return new Status(client.post(WeiboConfig.getValue("baseURL")
-				+ "statuses/update.json",
+		
+		String url = WeiboConfig.getValue("baseURL")
+				+ "statuses/update.json";
+		
+		System.out.println("UpdateStatus>>>>>>>>>>>>>>>>" + url);
+		
+		return new Status(client.post(url,
 				new PostParameter[] { new PostParameter("status", status) }));
 	}
 
