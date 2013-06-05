@@ -21,7 +21,7 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-						<@sx.submit targets="accountList" value="${action.getText('submit')}" theme="css_xhtml" />
+							<input type="submit" value="${action.getText('submit')}"/>
 						</td>
 					</tr>
 				</table>

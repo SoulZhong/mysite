@@ -70,6 +70,14 @@
 		<servlet-name>CodeReceiverServlet</servlet-name>
 		<url-pattern>/codeReceiver</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>WeiboServlet</servlet-name>
+		<servlet-class>com.soullleo.weibo.WeiboServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WeiboServlet</servlet-name>
+		<url-pattern>/weibo</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

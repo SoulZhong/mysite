@@ -6,7 +6,7 @@
 
 	<@s.textarea label="${action.getText('comment')}" cols="3" rows="2" name="message.value" theme="css_xhtml" />		
 
-	<@sx.submit targets="msgList" value="${action.getText('sendMsg')}" theme="ajax" />
+	<input type="submit" value="${action.getText('sendMsg')}"/>
 
 </@s.form>
 

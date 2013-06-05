@@ -11,6 +11,6 @@
 		</tr>
 	</table>					
 		
-	<@sx.submit targets="favoriteList" value="${action.getText('save')}" theme="ajax" />
+	<input type="submit" value="${action.getText('save')}" />
 
 </@s.form>

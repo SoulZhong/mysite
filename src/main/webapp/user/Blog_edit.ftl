@@ -1,4 +1,4 @@
-<#assign ckeditor=JspTaglibs["http://ckeditor.com"] />
+<#assign ckeditor=JspTaglibs["/WEB-INF/ckeditor.tld"] />
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css"  href="${base}/css/blogStyle.css"/>

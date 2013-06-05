@@ -7,7 +7,7 @@
 
 <div id="loginArea">
 <div id="showarea"></div>
-<a href="/weibo?do=login">я┐╜я┐╜я┐╜я┐╜╬вя┐╜я┐╜я┐╜я┐╜┬╝</a>
+<a href="/weibo?do=login">╨┬└╦╬в▓й╡╟┬╜</a>
 </div>
 
 <script type='text/javascript'>
