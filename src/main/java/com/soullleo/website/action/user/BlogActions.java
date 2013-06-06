@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.web.util.HtmlUtils;
 
 import com.soullleo.html.KeepStructureHTMLParser;
 import com.soullleo.html.NoHTMLParser;
@@ -66,7 +67,7 @@ public class BlogActions extends BaseUserAction {
 				.append(blog.getTitle())
 				.append("》")
 				.append(" ")
-				.append(NoHTMLParser.splitAndFilterString(blog.getContent(), 90))
+				.append(HtmlUtils.htmlUnescape(NoHTMLParser.splitAndFilterString(blog.getContent(), 90)))
 				.append("  http://www.soullleo.com/user/Blog_view.action?blogId=")
 				.append(blog.getId()).toString();
 	}
