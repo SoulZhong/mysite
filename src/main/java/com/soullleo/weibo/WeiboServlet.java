@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import weibo4j.Oauth;
+import weibo4j.model.WeiboException;
 import weibo4j.util.WeiboConfig;
 
 /**
@@ -38,17 +40,17 @@ public class WeiboServlet extends HttpServlet {
 		if ("login".equals(action)) {
 
 			try {
-				StringBuffer tmpURL = new StringBuffer(config.getAuthorizeURL())
-						.append("?client_id=")
-						.append(config.getClientId())
-						.append("&scope=all")
-						.append("&redirect_uri=")
-						.append(URLEncoder.encode(config.getRedirectURI(),
-								"UTF-8"));
 				
-				System.out.println(">>>>>>>>>>>>>>>" + tmpURL.toString());
-				response.sendRedirect(tmpURL.toString());
+				Oauth oauth = new Oauth();
+				
+				String authorizeURL = oauth.authorize("code", "", "");
+				System.out.println(">>>>>>>>>>>>>>>" + authorizeURL);
+				response.sendRedirect(authorizeURL);
+				
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (WeiboException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

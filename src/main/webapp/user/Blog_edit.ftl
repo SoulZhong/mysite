@@ -7,7 +7,9 @@
 	<body>
 		<div class="blogEdit">
 			<form action="Blog_save.action" method="post">
-				<@s.hidden name="blog.id"/>
+				<#if blog?has_content>
+					<@s.hidden name="blog.id"/>
+				</#if>
 					<div>
 						<@s.text name="title"/>:<input type="text" name="blog.title" value="${blog?if_exists.title?if_exists}"/>
 					</div>

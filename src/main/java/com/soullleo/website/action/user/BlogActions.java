@@ -13,7 +13,6 @@ import com.soullleo.html.KeepStructureHTMLParser;
 import com.soullleo.html.NoHTMLParser;
 import com.soullleo.website.domain.Blog;
 import com.soullleo.website.util.DomainConstants;
-import com.soullleo.weibo.OAuth;
 import com.soullleo.weibo.TimelineOperator;
 
 /**
@@ -33,7 +32,7 @@ public class BlogActions extends BaseUserAction {
 
 	private int p = 1;// pageNum
 	private int c = 10;// count per page
-	private long total; //total num
+	private long total; // total num
 
 	public String doEditAction() {
 
@@ -50,12 +49,26 @@ public class BlogActions extends BaseUserAction {
 			blog.setSummary(KeepStructureHTMLParser.parse(blog.getContent()));
 			blog.setUpdateTime(new Date());
 			getBaseService().saveOrUpdate(blog);
-			
-			System.out.println(">>>>>>>>>>>>>>>>>" + OAuth.instance.getAccess_token());
-			
-			new TimelineOperator().updateStatus(OAuth.instance.getAccess_token(), NoHTMLParser.splitAndFilterString(blog.getContent(), 130));
+
+			// System.out.println("12312312>>>>>>>>>>>>>>>>> 2.00mBMxjCqUybXD0c778a1ea5TzR_ME");
+
+			String content = generateConent(blog);
+
+			new TimelineOperator().updateStatus(
+					"2.00mBMxjCqUybXD0c778a1ea5TzR_ME", content);
 		}
 		return SUCCESS;
+	}
+
+	private String generateConent(Blog blog) {
+
+		return new StringBuffer("《")
+				.append(blog.getTitle())
+				.append("》")
+				.append(" ")
+				.append(NoHTMLParser.splitAndFilterString(blog.getContent(), 90))
+				.append("  http://www.soullleo.com/user/Blog_view.action?blogId=")
+				.append(blog.getId()).toString();
 	}
 
 	public String doViewAction() {
@@ -125,6 +138,5 @@ public class BlogActions extends BaseUserAction {
 	public void setTotal(long total) {
 		this.total = total;
 	}
-	
 
 }
