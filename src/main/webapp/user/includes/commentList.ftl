@@ -1,5 +1,5 @@
 
-
+<#--
 	<@s.form name="commentForm" action="Comment_create.action">
 		<#if blogId?has_content>
 			<@s.hidden name="comment.blog.id" value="${blogId}"/>
@@ -17,14 +17,9 @@
 				<td>${action.getText('comment')}</td><td width="80%"><@s.textarea name="comment.value" theme="css_xhtml" /></td>
 			</tr>
 		</table>			
-		
-	
-		
-	
-	
 		<input type='submit' value="${action.getText('sendMsg')}"/>
-	
 	</@s.form>
+-->
 	
 	
 	<#list comments?if_exists?sort_by("updateTime")?reverse as comment>

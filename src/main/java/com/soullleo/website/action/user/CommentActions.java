@@ -18,6 +18,10 @@ import com.soullleo.website.util.DomainConstants;
  */
 public class CommentActions extends BaseUserAction {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7122568583983998653L;
 	private Blog blog;
 	private Comment comment;
 	

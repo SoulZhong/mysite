@@ -7,7 +7,6 @@ import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import com.soullleo.website.util.Constant;
@@ -24,7 +23,6 @@ public class CheckLoginInterceptor extends AbstractInterceptor {
 
 	public String intercept(ActionInvocation actioninvocation) throws Exception {
 
-
 		Map<String, Object> session = actioninvocation.getInvocationContext().getSession();
 		Object obj = session.get(Constant.LOGIN_ACCOUNT);
 		
@@ -32,7 +30,7 @@ public class CheckLoginInterceptor extends AbstractInterceptor {
 			String url = ServletActionContext.getRequest().getRequestURI();
 			
 			session.put(Constant.REQUEST_URL, url);
-			
+
 			//return Action.LOGIN;
 			return "noPermission";
 		} else
