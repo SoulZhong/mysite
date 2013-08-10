@@ -3,9 +3,6 @@
  */
 package com.soullleo.server.jetty;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -14,27 +11,29 @@ import java.util.Properties;
  * @author Soul
  * @date Jun 1, 2013
  */
-final public class Config {
+public enum Config {
 
-	private final int port;
-	private final String webFilePath;
-	private final String resourcePath;
-	private final String contextPath;
+	INSTANCE;
+	
+	public Properties CONFIG = new Properties();
+	private int port;
+	private String webFilePath;
+	private String resourcePath;
+	private String contextPath;
+	private String indexPath;
 
-	Config(InputStream inputStream) throws IOException {
-
-		Properties config = new Properties();
-		config.load(inputStream);
-		
-		webFilePath = config.getProperty("server.webFilePath");
-		resourcePath = config.getProperty("server.resourcePath");
-		contextPath = config.getProperty("server.contextPath", "/");
-		port = Integer.valueOf(config.getProperty("server.port", "80"));
-
+	private Config() {
 	}
 
-	Config(String configFile) throws FileNotFoundException, IOException {
-		this(new FileInputStream(new File(configFile)));
+	public void load(InputStream inputStream) throws IOException {
+
+		CONFIG.load(inputStream);
+
+		webFilePath = CONFIG.getProperty("server.webFilePath");
+		resourcePath = CONFIG.getProperty("server.resourcePath");
+		contextPath = CONFIG.getProperty("server.contextPath", "/");
+		port = Integer.valueOf(CONFIG.getProperty("server.port", "80"));
+		indexPath = CONFIG.getProperty("index.path");
 	}
 
 	public int getPort() {
@@ -51,6 +50,10 @@ final public class Config {
 
 	public String getContextpath() {
 		return contextPath;
+	}
+
+	public String getIndexPath() {
+		return indexPath;
 	}
 
 }

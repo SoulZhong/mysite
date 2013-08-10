@@ -14,12 +14,12 @@ import org.junit.Test;
  * @date Jun 2, 2013
  */
 public class ConfigTest {
-	Config config;
+	Config config = Config.INSTANCE;
 
 	@Before
 	public void setUp() throws Exception {
 		
-		config = new Config(this.getClass().getClassLoader().getResourceAsStream("config.properties"));
+		Config.INSTANCE.load(this.getClass().getClassLoader().getResourceAsStream("config.properties"));
 	}
 
 	@After
