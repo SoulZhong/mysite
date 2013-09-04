@@ -12,6 +12,7 @@ import org.springframework.web.util.HtmlUtils;
 
 import com.soullleo.html.KeepStructureHTMLParser;
 import com.soullleo.html.NoHTMLParser;
+import com.soullleo.website.domain.Account;
 import com.soullleo.website.domain.Blog;
 import com.soullleo.website.util.DomainConstants;
 import com.soullleo.weibo.TimelineOperator;
@@ -46,7 +47,13 @@ public class BlogActions extends BaseUserAction {
 	public String doSaveAction() {
 		if (blog != null) {
 			blog.setStatus(DomainConstants.STATUS_EFFECTIVE);
-			blog.setAuthor(getLoginAccount());
+			
+			Account author = getLoginAccount();
+			if(author == null){
+				return "noPermission";
+			}
+			
+			blog.setAuthor(author);
 			blog.setSummary(KeepStructureHTMLParser.parse(blog.getContent()));
 			blog.setUpdateTime(new Date());
 			getBaseService().saveOrUpdate(blog);
@@ -55,8 +62,7 @@ public class BlogActions extends BaseUserAction {
 
 			String content = generateConent(blog);
 
-			new TimelineOperator().updateStatus(
-					"2.00mBMxjCqUybXD0c778a1ea5TzR_ME", content);
+			new TimelineOperator().updateStatus("2.00mBMxjCqUybXD0c778a1ea5TzR_ME", content);
 		}
 		return SUCCESS;
 	}
