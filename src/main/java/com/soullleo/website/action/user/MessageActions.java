@@ -33,10 +33,11 @@ public class MessageActions extends BaseUserAction {
 			message.setAccount(new Account(DomainConstants.ROLE_GUEST, username, email, getClientIp()));
 		}
 		
+		System.out.println("message.getValue()>>>>>>>>>>>>>>"+message.getValue());
+		System.out.println("containLink>>>>>>>>>>>>>>>>>>>>>"+CheatDetector.containLink(message.getValue()));
 		if(CheatDetector.containLink(message.getValue())){
 			return "noPermission";
 		}
-		
 		
 		getBaseService().create(message);
 		return SUCCESS;
