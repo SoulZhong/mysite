@@ -6,6 +6,8 @@ package com.soullleo.website.action.user;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.soullleo.website.domain.Account;
 import com.soullleo.website.domain.Blog;
@@ -17,42 +19,63 @@ import com.soullleo.website.util.DomainConstants;
  * @date 2012-3-17
  */
 public class CommentActions extends BaseUserAction {
-	
+
+	Pattern pattern = Pattern.compile("^.*<a\\s+href=.*$");
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7122568583983998653L;
 	private Blog blog;
 	private Comment comment;
-	
+
 	private String username;
 	private String email;
-	
-	public String doListAction(){
-		
+
+	public String doListAction() {
+
 		return "done";
 	}
-	
-	public String doCreateAction(){
-		
+
+	public String doCreateAction() {
+
 		Account loginAccount = super.getLoginAccount();
-		if(loginAccount != null){
+
+		if (loginAccount != null) {
 			comment.setAccount(loginAccount);
-		}else{
-			comment.setAccount(new Account(DomainConstants.ROLE_GUEST, username, email, getClientIp()));
+		} else {
+			comment.setAccount(new Account(DomainConstants.ROLE_GUEST,
+					username, email, getClientIp()));
 		}
+
+		String value = comment.getValue();
+
+		if (!containLink(value)) {
+			return "noPermission";
+		}
+
+		comment.setAccount(loginAccount);
 		getBaseService().saveOrUpdate(comment);
 		return SUCCESS;
 	}
-	
-	public List getComments(){
-		Map<String, Object> criterion = new HashMap<String,Object>();
+
+	protected boolean containLink(String value) {
+
+		if (value == null)
+			return false;
+		Matcher matcher = pattern.matcher(value);
+		if (matcher.matches()) {
+			return true;
+		}
+		return false;
+	}
+
+	public List getComments() {
+		Map<String, Object> criterion = new HashMap<String, Object>();
 		criterion.put("blog", blog);
 		return getBaseService().findByCriterion(Comment.class, criterion);
 	}
 
-	
-	
 	public String getUsername() {
 		return username;
 	}
