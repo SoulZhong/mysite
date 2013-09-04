@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import com.soullleo.website.domain.Account;
 import com.soullleo.website.domain.Blog;
 import com.soullleo.website.domain.Comment;
+import com.soullleo.website.util.CheatDetector;
 import com.soullleo.website.util.DomainConstants;
 
 /**
@@ -20,7 +21,6 @@ import com.soullleo.website.util.DomainConstants;
  */
 public class CommentActions extends BaseUserAction {
 
-	Pattern pattern = Pattern.compile("^.*<a\\s+href=.*$");
 
 	/**
 	 * 
@@ -50,7 +50,7 @@ public class CommentActions extends BaseUserAction {
 
 		String value = comment.getValue();
 
-		if (!containLink(value)) {
+		if (CheatDetector.containLink(value)) {
 			return "noPermission";
 		}
 
@@ -59,16 +59,7 @@ public class CommentActions extends BaseUserAction {
 		return SUCCESS;
 	}
 
-	protected boolean containLink(String value) {
-
-		if (value == null)
-			return false;
-		Matcher matcher = pattern.matcher(value);
-		if (matcher.matches()) {
-			return true;
-		}
-		return false;
-	}
+	
 
 	public List getComments() {
 		Map<String, Object> criterion = new HashMap<String, Object>();

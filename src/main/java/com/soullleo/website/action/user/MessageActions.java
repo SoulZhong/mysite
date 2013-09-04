@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.soullleo.website.domain.Account;
 import com.soullleo.website.domain.Message;
+import com.soullleo.website.util.CheatDetector;
 import com.soullleo.website.util.DomainConstants;
 
 /**
@@ -31,6 +32,11 @@ public class MessageActions extends BaseUserAction {
 		}else{
 			message.setAccount(new Account(DomainConstants.ROLE_GUEST, username, email, getClientIp()));
 		}
+		
+		if(CheatDetector.containLink(message.getValue())){
+			return "noPermission";
+		}
+		
 		
 		getBaseService().create(message);
 		return SUCCESS;
